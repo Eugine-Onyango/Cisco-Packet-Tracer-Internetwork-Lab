@@ -36,3 +36,19 @@ Snapshots
 
 ---
 Follow my journey on LinkedIn!
+
+
+
+Sprint 1: The Physical Foundation (Completed)
+Goal: Establish Layer 1 (Cabling) and Layer 2/3 (Connectivity) status across the entire topology.
+
+What I Built:
+The Golden Triangle: Connected 3x Cisco 2621XM Routers in a mesh topology.
+The Neighborhoods:Configured LANs for the Laptop (SW), Web Server (North), and DNS Server (SE).
+IP Addressing: Implemented a complex VLSM (Variable Length Subnet Mask) scheme, utilizing `/28` for LANs and `/30` for point-to-point WAN links.
+
+ Lessons Learned:
+The Cabling Reality:** I discovered that legacy Cisco 2621XM routers don't support Auto-MDIX. I initially tried connecting Router-to-Server with a Straight-Through cable (failed), but realized that since both transmit on the same pins, I needed a Cross-Over Cable. Swapped it out, and the link went Green immediately!
+The CLI: Learned the difference between `User Exec Mode` (`>`), `Privileged Mode` (`#`), and `Config Mode` (`(config)#`). You can't ping from the config mode unless you use the the "do" command infront of the command "ping" e.g #do ping 110.120.x.x.
+
+Current Status: All physical links are UP (Green), and devices can ping their local gateways. Next step: Routing!
