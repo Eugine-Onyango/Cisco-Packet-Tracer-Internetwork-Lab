@@ -52,3 +52,20 @@ The Cabling Reality:** I discovered that legacy Cisco 2621XM routers don't suppo
 The CLI: Learned the difference between `User Exec Mode` (`>`), `Privileged Mode` (`#`), and `Config Mode` (`(config)#`). You can't ping from the config mode unless you use the the "do" command infront of the command "ping" e.g #do ping 110.120.x.x.
 
 Current Status: All physical links are UP (Green), and devices can ping their local gateways. Next step: Routing!
+
+
+
+Sprints 2-4: Making the Network "Smart" (Completed)
+Goal: Teach the routers to talk to each other and get the Website working.
+
+What I Built:
+The "GPS" System (Routing):I turned on a protocol called RIPv2 on all three routers. Now, they automatically share maps. If I add a new road, everyone knows about it instantly.
+The "Backup Plan" (Redundancy):I tested what happens if a road breaks. The routers automatically redirect traffic to the other path. It’s self-healing!
+The "Phonebook" (DNS):I set up a DNS Server. Now, the laptop can find the Web Server by name (`www.WebSvr.com`) instead of me having to memorize complex IP numbers.
+
+Lessons, bugs and debugs:
+Routing Tables: I learned how to read the router's map (`show ip route`). Seeing the letter 'R' appear meant the routers were finally gossiping!
+The Browser Problem:My ping commands worked, but the website wouldn't load. I realized I forgot to give the Laptop the address of the DNS server.
+The Fix:Once I told the laptop "The DNS Server is at 180.190.200.8," the website loaded immediately.
+
+Final Result: I can sit at the Laptop, type a website name, and the network handles all the complex routing to get me there.
